@@ -13,13 +13,17 @@ public class People {
     private int age;
     private String name;
 
-    private People() {
+    public People() {
 
     }
 
     public People(int age, String name) {
         this.age = age;
         this.name = name;
+    }
+
+    public void eat() {
+        System.out.println("Eat nothing");
     }
 
     public void eat(String food) {
