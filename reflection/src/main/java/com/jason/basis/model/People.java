@@ -1,4 +1,4 @@
-package com.jason.basis;
+package com.jason.basis.model;
 
 /**
  * Created by jason on 2017/7/25 0025.

@@ -1,5 +1,6 @@
-package com.jason.basis;
+package com.jason.basis.reflection;
 
+import com.jason.basis.reflection.Reflection;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -122,6 +123,38 @@ public class ReflectionTest {
                 System.out.println(")");
             }
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void invokeMethod() {
+        try {
+            reflection.invokeMethod();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (InvocationTargetException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Test
+    public void operateProperty() {
+        try {
+            reflection.operateProperty();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (NoSuchFieldException e) {
             e.printStackTrace();
         }
     }

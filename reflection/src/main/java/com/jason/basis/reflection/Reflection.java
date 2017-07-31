@@ -1,4 +1,6 @@
-package com.jason.basis;
+package com.jason.basis.reflection;
+
+import com.jason.basis.model.People;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -16,43 +18,59 @@ public class Reflection {
     }
 
     public Class<?> getInstance() throws ClassNotFoundException {
-        return Class.forName("com.jason.basis.People");
+        return Class.forName("com.jason.basis.model.People");
     }
 
     public Class<?> getSuperClazz() throws ClassNotFoundException {
-        Class<?> clazz = Class.forName("com.jason.basis.Student");
+        Class<?> clazz = Class.forName("com.jason.basis.model.Student");
         return clazz.getSuperclass();
     }
 
     public Class<?>[] getInterfaces() throws ClassNotFoundException {
-        Class<?> clazz = Class.forName("com.jason.basis.Student");
+        Class<?> clazz = Class.forName("com.jason.basis.model.Student");
         return clazz.getInterfaces();
     }
 
     public Constructor<?> getConstructor() throws NoSuchMethodException, ClassNotFoundException {
-        Class<?> clazz = Class.forName("com.jason.basis.People");
+        Class<?> clazz = Class.forName("com.jason.basis.model.People");
         return clazz.getConstructor();
     }
 
     public Constructor<?>[] getConstructors() throws NoSuchMethodException, ClassNotFoundException {
-        Class<?> clazz = Class.forName("com.jason.basis.People");
+        Class<?> clazz = Class.forName("com.jason.basis.model.People");
         return clazz.getConstructors();
     }
 
     public Field[] getProperties() throws ClassNotFoundException {
-        Class<?> clazz = Class.forName("com.jason.basis.People");
+        Class<?> clazz = Class.forName("com.jason.basis.model.People");
         return clazz.getDeclaredFields();
     }
 
     public Method[] getMethods() throws ClassNotFoundException {
-        Class<?> clazz = Class.forName("com.jason.basis.People");
+        Class<?> clazz = Class.forName("com.jason.basis.model.People");
         return clazz.getMethods();
     }
 
     public void invokeMethod() throws ClassNotFoundException, NoSuchMethodException, IllegalAccessException, InstantiationException, InvocationTargetException {
-        Class<?> clazz = Class.forName("com.jason.basis.People");
+        Class<?> clazz = Class.forName("com.jason.basis.model.People");
         Method method = clazz.getMethod("eat");
         method.invoke(clazz.newInstance());
+
+        method = clazz.getMethod("eat", String.class);
+        method.invoke(clazz.newInstance(), "food");
+    }
+
+    public void operateProperty() throws ClassNotFoundException, IllegalAccessException, InstantiationException, NoSuchFieldException {
+        Class<?> clazz = Class.forName("com.jason.basis.model.People");
+        Object obj = clazz.newInstance();
+        Field field = clazz.getDeclaredField("name");
+        field.setAccessible(true);
+        field.set(obj, "jason");
+        System.out.printf(String.valueOf(field.get(obj)));
+    }
+
+    public void dynamicProxy() {
+
     }
 
 }
