@@ -11,6 +11,7 @@
 
     <modules>
         <module>reflection</module>
+        <module>reference</module>
     </modules>
 
     <properties>
