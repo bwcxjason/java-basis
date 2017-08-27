@@ -1,6 +1,8 @@
 package com.jason.basis.reflection;
 
+import com.jason.basis.model.Behavior;
 import com.jason.basis.model.People;
+import com.jason.basis.model.Student;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
@@ -70,7 +72,10 @@ public class Reflection {
     }
 
     public void dynamicProxy() {
-
+        MyInvocationHandler invocationHandler = new MyInvocationHandler();
+        Student student = new Student();
+        Behavior behavior = (Student) invocationHandler.bind(student);
+        behavior.run();
     }
 
 }

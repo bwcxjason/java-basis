@@ -5,6 +5,10 @@ package com.jason.basis.model;
  */
 public class Student extends People implements Behavior {
 
+    public Student() {
+
+    }
+
     private Student(int age, String name) {
         super(age, name);
     }

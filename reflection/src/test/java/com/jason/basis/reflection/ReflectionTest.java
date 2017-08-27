@@ -159,4 +159,9 @@ public class ReflectionTest {
         }
     }
 
+    @Test
+    public void dynamicProxy() {
+        reflection.dynamicProxy();
+    }
+
 }
