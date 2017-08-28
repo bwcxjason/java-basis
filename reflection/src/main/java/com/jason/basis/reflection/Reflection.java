@@ -74,7 +74,7 @@ public class Reflection {
     public void dynamicProxy() {
         MyInvocationHandler invocationHandler = new MyInvocationHandler();
         Student student = new Student();
-        Behavior behavior = (Student) invocationHandler.bind(student);
+        Behavior behavior = (Behavior) invocationHandler.bind(student);
         behavior.run();
     }
 
