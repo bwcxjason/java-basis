@@ -1,6 +1,5 @@
 package com.jason.basis.reflection;
 
-import com.jason.basis.reflection.Reflection;
 import org.junit.Before;
 import org.junit.Test;
 

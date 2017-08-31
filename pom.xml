@@ -12,6 +12,7 @@
     <modules>
         <module>reflection</module>
         <module>reference</module>
+        <module>design-patterns</module>
     </modules>
 
     <properties>
