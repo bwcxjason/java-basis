@@ -13,6 +13,7 @@
         <module>reflection</module>
         <module>reference</module>
         <module>design-patterns</module>
+        <module>classloader</module>
     </modules>
 
     <properties>
