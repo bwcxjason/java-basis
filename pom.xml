@@ -14,6 +14,7 @@
         <module>reference</module>
         <module>design-patterns</module>
         <module>classloader</module>
+        <module>shiro</module>
     </modules>
 
     <properties>
